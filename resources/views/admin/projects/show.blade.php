@@ -19,7 +19,7 @@
     <div class="clearfix">
         {{-- Immagine --}}
         @if ($project->image)
-            <img style="width: 250px" src="{{ $project->printImage() }}" alt="{{ $project->title }}"
+            <img style="width: 250px" src="{{ $project->image }}" alt="{{ $project->title }}"
                 class="me-3 float-start img-fluid ">
         @endif
 

@@ -14,6 +14,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::whereIsCompleted(true)->latest()->get();
+        // foreach ($projects as $project) {
+        //     if ($project->image) $project->image = url('storage/' . $project->image);
+        // }
         return response()->json($projects);
     }
 
