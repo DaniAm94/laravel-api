@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::whereIsCompleted(true)->latest()->get();
+        $projects = Project::whereIsCompleted(true)->latest()->paginate(3);
         // foreach ($projects as $project) {
         //     if ($project->image) $project->image = url('storage/' . $project->image);
         // }
