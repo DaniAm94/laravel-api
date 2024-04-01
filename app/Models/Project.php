@@ -13,6 +13,7 @@ class Project extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = ['title', 'description', 'slug', 'is_completed', 'type_id'];
+    protected $with = ['author'];
 
     public function getFormattedDate($column, $format = 'd-m-Y')
     {
@@ -45,7 +46,11 @@ class Project extends Model
     public function image(): Attribute
     {
         return Attribute::make(fn ($value) => $value
-        /**&& app('request')->is('api/*')*/
-        ? url('storage/' . $value) : null);
+            /**&& app('request')->is('api/*')*/
+            ? url('storage/' . $value) : null);
+    }
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

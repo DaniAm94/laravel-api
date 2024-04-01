@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Danilo',
             'email' => 'danilo@example.com',
         ]);
+        \App\Models\User::factory(5)->create();
         $this->call([TypeSeeder::class, TechnologySeeder::class]);
         //\App\Models\Type::factory(10)->create();
         \App\Models\Project::factory(10)->create();

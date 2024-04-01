@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProjectController extends Controller
 {
@@ -59,6 +61,7 @@ class ProjectController extends Controller
             $img_url = Storage::putFileAs('project_images', $data['image'], "$project->slug.$extension");
             $project->image = $img_url;
         }
+        $project->user_id = Auth::id();
         $project->save();
         if (Arr::exists($data, 'technologies')) {
             $project->technologies()->attach($data['technologies']);

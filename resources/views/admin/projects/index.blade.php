@@ -27,6 +27,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Autore</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Tipologia</th>
                     <th scope="col">Tecnologie</th>
@@ -54,6 +55,9 @@
 
                         {{-- Titolo --}}
                         <td>{{ $project->title }}</td>
+
+                        {{-- Autore --}}
+                        <td>{{ $project->author ? $project->author->name : 'Anonimo' }}</td>
 
                         {{-- Slug --}}
                         <td>{{ $project->slug }}</td>
