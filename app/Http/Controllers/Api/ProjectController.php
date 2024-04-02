@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class ProjectController extends Controller
 {
     /**
@@ -34,6 +36,7 @@ class ProjectController extends Controller
     public function show(String $slug)
     {
         $project = Project::whereIsCompleted(true)->whereSlug($slug)->first();
+        if (!$project) return response(null, 404);
         return response()->json($project);
     }
 
