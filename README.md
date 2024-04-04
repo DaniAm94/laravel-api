@@ -40,3 +40,17 @@ Creiamo dei componenti che facciano da pagine per l'applicazione Vue, tra cui la
 #### `Bonus:`
 - Gestire una pagina 404
 - Gestire dinamicamente la classe active
+
+---
+
+# Parte 3
+# Laravel Mail
+## repo: le stesse di ieri
+     Lavorate sul vostro progetto personale e implementate l'invio di una mail.
+     Ricordate di fare un account su Mailtrap.io  e configurare il vostro .env
+### DESCRIZIONE:
+- Creiamo un form di contatto sulla repo Vue
+- Prepariamo un' API per ricevere i dati dal form
+- Coi dati provenienti dal form, inviare una mail all'amministratore del sito (voi stessi)
+- Validazione, Alert, Loader ecc. sono tutti considerati BONUS.
+- Portate dunque a casa il risultato base ed espandete a vostro piacimento!
