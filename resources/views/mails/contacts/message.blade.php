@@ -10,6 +10,7 @@
 
 <body>
     <h1>Nuovo messaggio</h1>
+    <p>{{ $content }}</p>
 </body>
 
 </html>
