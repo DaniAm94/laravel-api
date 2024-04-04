@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechnologyProjectController;
 use App\Http\Controllers\Api\TypeProjectController;
@@ -22,8 +23,10 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::apiResource('projects', ProjectController::class)->only('index');
-Route::get('projects/{slug}', [ProjectController::class, 'show']);
+Route::apiResource('/projects', ProjectController::class)->only('index');
+Route::get('/projects/{slug}', [ProjectController::class, 'show']);
 
-Route::get('types/{slug}/projects', TypeProjectController::class);
-Route::get('technologies/{slug}/projects', TechnologyProjectController::class);
+Route::get('/types/{slug}/projects', TypeProjectController::class);
+Route::get('/technologies/{slug}/projects', TechnologyProjectController::class);
+
+Route::post('/contact-message', [ContactController::class, 'message']);
