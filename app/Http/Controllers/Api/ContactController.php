@@ -14,6 +14,6 @@ class ContactController extends Controller
         $data = $request->all();
         $mail = new ContactMessageMail($data['sender'], $data['subject'], $data['content']);
         Mail::to(env('MAIL_TO_ADDRESS'))->send($mail);
-        return response(null, 200);
+        return response(null, 204);
     }
 }
